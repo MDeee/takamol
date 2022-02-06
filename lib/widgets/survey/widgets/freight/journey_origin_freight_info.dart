@@ -34,32 +34,32 @@ class JourneyOriginFreightInfoWidget extends StatelessWidget {
               "منشأ الرحلة",
               style: TextStyle(fontSize: 20),
             ),
-            const SizedBox(height: 10),
-            ToggleButtonsFormInput(
-              label: const Text("هل أتيت من "),
-              choices: [
-                ToggleButtonsFormInput.createChoice(
-                  text: "المنزل",
-                ),
-                ToggleButtonsFormInput.createChoice(
-                  text: "عودة إلي المنزل",
-                ),
-                ToggleButtonsFormInput.createChoice(
-                  text: "أخري",
-                ),
-              ],
-              onChange: (int? i) {
-                survey.originLocationType = TravelTarget.values[i!];
-              },
-              validator: (int? i) => Validator.validateChoices(
-                value: i,
-                refused: survey.destinationLocationType == null ||
-                        survey.destinationLocationType == TravelTarget.other
-                    ? [null]
-                    : [null, survey.destinationLocationType!.index],
-                message: "يجب اعطاء اجابة صحيحة",
-              ),
-            ),
+            // const SizedBox(height: 10),
+            // ToggleButtonsFormInput(
+            //   label: const Text("هل أتيت من "),
+            //   choices: [
+            //     ToggleButtonsFormInput.createChoice(
+            //       text: "المنزل",
+            //     ),
+            //     ToggleButtonsFormInput.createChoice(
+            //       text: "عودة إلي المنزل",
+            //     ),
+            //     ToggleButtonsFormInput.createChoice(
+            //       text: "أخري",
+            //     ),
+            //   ],
+            //   onChange: (int? i) {
+            //     survey.originLocationType = TravelTarget.values[i!];
+            //   },
+            //   validator: (int? i) => Validator.validateChoices(
+            //     value: i,
+            //     refused: survey.destinationLocationType == null ||
+            //             survey.destinationLocationType == TravelTarget.other
+            //         ? [null]
+            //         : [null, survey.destinationLocationType!.index],
+            //     message: "يجب اعطاء اجابة صحيحة",
+            //   ),
+            // ),
             const SizedBox(height: 10),
             TextFormField(
               decoration: const InputDecoration(
