@@ -364,15 +364,19 @@ class SurveyFreight extends Survey {
     data['headerHaveDrivingLicense'] = header.haveDrivingLicense;
     data['headerHaveCrossCitiesCar'] = header.haveCrossCitiesCar;
     data['originLocationName'] = origin.location.name;
-    data['originLocationType'] = EnumToString.convertToString(
-        origin.location.travelTarget,
-        camelCase: true);
+    print("check origin location type ...");
+    print(origin.location.travelTarget);
+    data['originLocationType'] = origin.location.travelTarget != null
+        ? EnumToString.convertToString(origin.location.travelTarget,
+            camelCase: true)
+        : "";
     data['originType'] = origin.type;
     data['originTimeStamp'] = origin.timestamp.toString();
     data['destinationLocationName'] = destination.location.name;
-    data['destinationLocationType'] = EnumToString.convertToString(
-        destination.location.travelTarget,
-        camelCase: true);
+    data['destinationLocationType'] = destination.location.travelTarget != null
+        ? EnumToString.convertToString(destination.location.travelTarget,
+            camelCase: true)
+        : "";
     data['destinationType'] = destination.type;
     data['destinationTimeStamp'] = destination.timestamp.toString();
     data['loadInfoType1'] =
