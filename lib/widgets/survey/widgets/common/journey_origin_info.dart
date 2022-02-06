@@ -23,7 +23,7 @@ class JourneyOriginInfoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final format = DateFormat("يوم dd MMM yyyy الساعة hh:mm a");
     SurveyProvider survey = Provider.of<SurveyProvider>(context, listen: false);
-    late DateTime startDate;
+    late DateTime startDate = DateTime.now();
     // late String surveyCity = survey.headerCity;
 
     // print("debug servey");

@@ -167,7 +167,7 @@ class Journy {
   late DateTime journyArrival;
   late DateTime returnStart;
   late DateTime returnArrival;
-  late int distance;
+  late int? distance;
 }
 
 class CaseInfo {
