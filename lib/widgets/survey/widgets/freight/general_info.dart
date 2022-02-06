@@ -153,67 +153,63 @@ class _GeneralInfoState extends State<GeneralInfo> {
                           rotation: 0.785398),
                     ],
                   ),
-                  survey.generalInfoCoDriverExists
-                      ? Column(
-                          children: [
-                            const SizedBox(height: 10),
-                            ToggleButtonsFormInput(
-                              label: const Text("جنسية السائق الثاني"),
-                              choices: [
-                                ToggleButtonsFormInput.createChoice(
-                                  text: "سعودى",
-                                ),
-                                ToggleButtonsFormInput.createChoice(
-                                  text: "جنسية أخرى",
-                                ),
-                              ],
-                              onSaved: (int? i) {
-                                survey.generalInfoCoDriverIsCitizen = i == 0;
-                              },
-                              validator: (int? i) => Validator.validateChoice(
-                                value: i,
-                                refused: null,
-                                message: "يجب اعطاء اجابة",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            TextFormField(
-                              decoration: const InputDecoration(
-                                label: Text("رقم الجوال"),
-                                contentPadding:
-                                    EdgeInsets.symmetric(horizontal: 8),
-                              ),
-                              keyboardType: TextInputType.number,
-                              inputFormatters: <TextInputFormatter>[
-                                FilteringTextInputFormatter.allow(
-                                  RegExp(r'[0-9]'),
-                                ),
-                              ],
-                              onSaved: (String? i) {
-                                survey.generalInfoCoDriverPhone = i!;
-                              },
-                              validator: (String? i) => Validator.validateEmpty(
-                                value: i,
-                                message: "يجب اعطاء اجابة",
-                              ),
-                            ),
-                            TextFormField(
-                              decoration: const InputDecoration(
-                                label: Text("الإسم"),
-                                contentPadding:
-                                    EdgeInsets.symmetric(horizontal: 8),
-                              ),
-                              onSaved: (String? i) {
-                                survey.generalInfoCoDriverName = i!;
-                              },
-                              validator: (String? i) => Validator.validateEmpty(
-                                value: i,
-                                message: "يجب اعطاء اجابة",
-                              ),
-                            ),
-                          ],
-                        )
-                      : const SizedBox.shrink(),
+                  Column(
+                    children: [
+                      const SizedBox(height: 10),
+                      ToggleButtonsFormInput(
+                        label: const Text("جنسية السائق الثاني"),
+                        choices: [
+                          ToggleButtonsFormInput.createChoice(
+                            text: "سعودى",
+                          ),
+                          ToggleButtonsFormInput.createChoice(
+                            text: "جنسية أخرى",
+                          ),
+                        ],
+                        onSaved: (int? i) {
+                          survey.generalInfoCoDriverIsCitizen = i == 0;
+                        },
+                        validator: (int? i) => Validator.validateChoice(
+                          value: i,
+                          refused: null,
+                          message: "يجب اعطاء اجابة",
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          label: Text("رقم الجوال"),
+                          contentPadding: EdgeInsets.symmetric(horizontal: 8),
+                        ),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.allow(
+                            RegExp(r'[0-9]'),
+                          ),
+                        ],
+                        onSaved: (String? i) {
+                          survey.generalInfoCoDriverPhone = i!;
+                        },
+                        validator: (String? i) => Validator.validateEmpty(
+                          value: i,
+                          message: "يجب اعطاء اجابة",
+                        ),
+                      ),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          label: Text("الإسم"),
+                          contentPadding: EdgeInsets.symmetric(horizontal: 8),
+                        ),
+                        onSaved: (String? i) {
+                          survey.generalInfoCoDriverName = i!;
+                        },
+                        validator: (String? i) => Validator.validateEmpty(
+                          value: i,
+                          message: "يجب اعطاء اجابة",
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

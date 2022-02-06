@@ -14,14 +14,16 @@ import '/widgets/common/dropdown_form_input.dart';
 import '/widgets/common/toggle_buttons_form_input.dart';
 
 class JourneyOriginInfoWidget extends StatelessWidget {
+  final ManualLocations? initManualLocation;
   const JourneyOriginInfoWidget({
     Key? key,
+    this.initManualLocation,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final format = DateFormat("يوم dd MMM yyyy الساعة hh:mm a");
     SurveyProvider survey = Provider.of<SurveyProvider>(context, listen: false);
+    late DateTime startDate;
     // late String surveyCity = survey.headerCity;
 
     // print("debug servey");
@@ -166,18 +168,18 @@ class JourneyOriginInfoWidget extends StatelessWidget {
                 icon: Icon(Icons.timelapse),
               ),
               onShowPicker: (context, currentValue) async {
-                final date = await showDatePicker(
+                startDate = (await showDatePicker(
                     context: context,
                     firstDate: DateTime(2010),
                     initialDate: currentValue ?? DateTime.now(),
-                    lastDate: DateTime(2100));
-                if (date != null) {
+                    lastDate: DateTime(2100)))!;
+                if (startDate != null) {
                   final time = await showTimePicker(
                     context: context,
                     initialTime:
                         TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
                   );
-                  return DateTimeField.combine(date, time);
+                  return DateTimeField.combine(startDate, time);
                 } else {
                   return currentValue;
                 }
@@ -216,10 +218,11 @@ class JourneyOriginInfoWidget extends StatelessWidget {
                   return currentValue;
                 }
               },
-              validator: (DateTime? d) => Validator.validateChoice(
+              validator: (DateTime? d) => Validator.validateDateTime(
                 value: d,
-                refused: null,
-                message: "يجب اعطاء اجابة",
+                message:
+                    "يجب ان يكون تاريخ نهاية الرحلة اكبر من تاريخ بداية الرحلة",
+                otherValue: startDate,
               ),
               onSaved: (DateTime? d) {
                 survey.journeyArrivalDate = d!;

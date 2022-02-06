@@ -19,7 +19,7 @@ class JourneyDestinationInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SurveyProvider survey = Provider.of<SurveyProvider>(context, listen: false);
-
+    late DateTime startDate;
     final format = DateFormat("يوم dd MMM yyyy الساعة hh:mm a");
     return Card(
       child: Padding(
@@ -151,18 +151,18 @@ class JourneyDestinationInfoWidget extends StatelessWidget {
                 icon: Icon(Icons.timelapse),
               ),
               onShowPicker: (context, currentValue) async {
-                final date = await showDatePicker(
+                startDate = (await showDatePicker(
                     context: context,
                     firstDate: DateTime(1900),
                     initialDate: currentValue ?? DateTime.now(),
-                    lastDate: DateTime(2100));
-                if (date != null) {
+                    lastDate: DateTime(2100)))!;
+                if (startDate != null) {
                   final time = await showTimePicker(
                     context: context,
                     initialTime:
                         TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
                   );
-                  return DateTimeField.combine(date, time);
+                  return DateTimeField.combine(startDate, time);
                 } else {
                   return currentValue;
                 }
@@ -202,10 +202,11 @@ class JourneyDestinationInfoWidget extends StatelessWidget {
                   return currentValue;
                 }
               },
-              validator: (DateTime? d) => Validator.validateChoice(
+              validator: (DateTime? d) => Validator.validateDateTime(
                 value: d,
-                refused: null,
-                message: "يجب اعطاء اجابة",
+                message:
+                    "يجب ان يكون تاريخ نهاية الرحلة اكبر من تاريخ بداية الرحلة",
+                otherValue: startDate,
               ),
               onSaved: (DateTime? d) {
                 survey.returnArrivalDate = d!;

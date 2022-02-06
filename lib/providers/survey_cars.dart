@@ -203,6 +203,14 @@ class SurveyCarsProvider extends SurveyProvider {
   }
 
   @override
+  int get distance => _data.journy.distance;
+  @override
+  set distance(int t) {
+    _data.journy.distance = t;
+    notifyListeners();
+  }
+
+  @override
   Repeatablity get journeyRepeatablitiy => _data.journy.repeatablity;
   @override
   set journeyRepeatablitiy(Repeatablity r) {

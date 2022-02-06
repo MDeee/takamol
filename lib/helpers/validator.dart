@@ -117,4 +117,17 @@ class Validator {
       return message;
     }
   }
+
+  static String? validateDateTime(
+      {required DateTime? value,
+      required DateTime? otherValue,
+      required String? message}) {
+    if (value != null) {
+      if (value.isBefore(otherValue!) || value.compareTo(otherValue) == 0) {
+        return message;
+      }
+    } else {
+      return "يجب اعطاء اجابة صحيحة";
+    }
+  }
 }

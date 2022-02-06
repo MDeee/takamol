@@ -53,6 +53,7 @@ class SurveyPT extends Survey {
     data['journeyPurpose'] = journy.purpose;
     data['journeyGoType'] = journy.goType;
     data['journeyBackType'] = journy.backType;
+    data['distance'] = journy.distance;
     data['journeyRepeatablitiy'] =
         EnumToString.convertToString(journy.repeatablity, camelCase: true);
     data['journeyStartDate'] = journy.journyStart.toString();
@@ -119,6 +120,7 @@ class SurveyPT extends Survey {
         TravelTarget.values, json['journeyEndLocationTravelTarget'],
         camelCase: true)!;
     journy.endLocation.name = json['journeyEndLocationName'];
+    journy.distance = json['distance'];
     journy.purpose = json['journeyPurpose'];
     journy.goType = json['journeyGoType'];
     journy.backType = json['journeyBackType'];

@@ -159,6 +159,9 @@ abstract class SurveyProvider with ChangeNotifier {
   String get journeyGoType;
   set journeyGoType(String t);
 
+  int get distance;
+  set distance(int t);
+
   String get journeyBackType;
   set journeyBackType(String t);
 

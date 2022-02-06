@@ -62,7 +62,7 @@ class _SuggestionsState extends State<Suggestions> {
       c.suggestions[4].inVehicleTime = distance * 0.0038;
       //
       c.suggestions[0].totalCost = distance * 0.1817;
-      c.suggestions[1].totalCost = distance * 0.0949;
+      c.suggestions[1].totalCost = distance * 0.3949;
       c.suggestions[2].totalCost = distance * 0.2110;
       c.suggestions[3].totalCost = distance * 0.2335;
       c.suggestions[4].totalCost = distance * 0.3482;
@@ -248,6 +248,9 @@ class _SuggestionsState extends State<Suggestions> {
                       survey.suggestions = e!;
                       (survey.data as SurveyPT).suggestionName =
                           "${isSb ? 'sb' : 'lb'}-${(i ~/ 2) + 1}.${i.remainder(2) + 1}";
+                      setState(() {
+                        survey.distance = distance;
+                      });
                     },
                   )
                 : SizedBox.shrink(),

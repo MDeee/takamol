@@ -38,7 +38,7 @@ class AddSurveyFormPt extends StatelessWidget {
               HeaderData(initManualLocation: initManualLocation),
               ...(survey.headerAge >= 14 && survey.headerCrossCities)
                   ? [
-                      const JourneyOriginInfoWidget(),
+                      JourneyOriginInfoWidget(),
                       const JourneyDestinationInfoWidget(),
                       const CaseInfoWidget(),
                       const JobStatusWidget(),
