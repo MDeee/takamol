@@ -1,0 +1,231 @@
+// LP1.1
+    [
+      // LP1.1#1
+      {
+        "Car": CardChoiceDetails(
+          inVehicleTime: 0.10,
+          egressTime: 0.20,
+          totalCost: 0.0,
+        ),
+        "Air": CardChoiceDetails(
+          inVehicleTime: 0.20,
+          waitingTime: 120,
+          egressTime: -0.20,
+          transferTime: false,
+          totalCost: -0.20,
+        ),
+        "Bus": CardChoiceDetails(
+          inVehicleTime: 0.10,
+          waitingTime: 15,
+          egressTime: -0.10,
+          transferTime: false,
+          totalCost: -0.20,
+        ),
+        "Train": CardChoiceDetails(
+          inVehicleTime: -0.10,
+          waitingTime: 20,
+          egressTime: -0.20,
+          transferTime: false,
+          totalCost: -0.10,
+        ),
+        "HS": CardChoiceDetails(
+          inVehicleTime: -0.20,
+          waitingTime: 40,
+          egressTime: -0.10,
+          transferTime: false,
+          totalCost: 0.10,
+        ),
+      },
+      //done
+      //////////
+      // LP1.1#2
+      {
+        "Car": CardChoiceDetails(
+          inVehicleTime: 0.20,
+          egressTime: 0.0,
+          totalCost: -0.10,
+        ),
+        "Air": CardChoiceDetails(
+          inVehicleTime: 0.10,
+          waitingTime: 120,
+          egressTime: 0.20,
+          transferTime: true,
+          totalCost: 0.20,
+        ),
+        "Bus": CardChoiceDetails(
+          inVehicleTime: 0.0,
+          waitingTime: 25,
+          egressTime: 0.10,
+          transferTime: true,
+          totalCost: 0.10,
+        ),
+        "Train": CardChoiceDetails(
+          inVehicleTime: -0.10,
+          waitingTime: 30,
+          egressTime: -0.20,
+          transferTime: false,
+          totalCost: 0.10,
+        ),
+        "HS": CardChoiceDetails(
+          inVehicleTime: -0.20,
+          waitingTime: 20,
+          egressTime: -0.20,
+          transferTime: false,
+          totalCost: 0.0,
+        ),
+      },
+      //done
+      //////////
+      // LP1.1#3
+      {
+        "Car": CardChoiceDetails(
+          inVehicleTime: 0.0,
+          egressTime: 0.0,
+          totalCost: 0.20,
+        ),
+        "Air": CardChoiceDetails(
+          inVehicleTime: -0.10,
+          waitingTime: 120,
+          egressTime: -0.10,
+          transferTime: false,
+          totalCost: 0.10,
+        ),
+        "Bus": CardChoiceDetails(
+          inVehicleTime: -0.10,
+          waitingTime: 15,
+          egressTime: -0.10,
+          transferTime: false,
+          totalCost: 0.0,
+        ),
+        "Train": CardChoiceDetails(
+          inVehicleTime: -0.10,
+          waitingTime: 15,
+          egressTime: -0.20,
+          transferTime: false,
+          totalCost: 0.10,
+        ),
+        "HS": CardChoiceDetails(
+          inVehicleTime: 0.0,
+          waitingTime: 30,
+          egressTime: -0.10,
+          transferTime: false,
+          totalCost: -0.20,
+        ),
+      },
+      //done
+      //////////
+      // LP1.1#4
+      {
+        "Car": CardChoiceDetails(
+          inVehicleTime: -0.10,
+          egressTime: 0.10,
+          totalCost: 0.10,
+        ),
+        "Air": CardChoiceDetails(
+          inVehicleTime: 0.10,
+          waitingTime: 120,
+          egressTime: 0.20,
+          transferTime: false,
+          totalCost: -0.20,
+        ),
+        "Bus": CardChoiceDetails(
+          inVehicleTime: 0.0,
+          waitingTime: 25,
+          egressTime: -0.10,
+          transferTime: true,
+          totalCost: 0.0,
+        ),
+        "Train": CardChoiceDetails(
+          inVehicleTime: 0.10,
+          waitingTime: 20,
+          egressTime: -0.20,
+          transferTime: false,
+          totalCost: -0.10,
+        ),
+        "HS": CardChoiceDetails(
+          inVehicleTime: 0.10,
+          waitingTime: 30,
+          egressTime: 0.10,
+          transferTime: true,
+          totalCost: 0.10,
+        ),
+      },
+      //done
+      //////////
+      // LP1.1#5
+      {
+        "Car": CardChoiceDetails(
+          inVehicleTime: 0.20,
+          egressTime: 0.10,
+          totalCost: 0.10,
+        ),
+        "Air": CardChoiceDetails(
+          inVehicleTime: -0.20,
+          waitingTime: 60,
+          egressTime: -0.20,
+          transferTime: false,
+          totalCost: 0.10,
+        ),
+        "Bus": CardChoiceDetails(
+          inVehicleTime: 0.0,
+          waitingTime: 10,
+          egressTime: 0.0,
+          transferTime: false,
+          totalCost: -0.10,
+        ),
+        "Train": CardChoiceDetails(
+          inVehicleTime: 0.0,
+          waitingTime: 30,
+          egressTime: 0.0,
+          transferTime: false,
+          totalCost: -0.20,
+        ),
+        "HS": CardChoiceDetails(
+          inVehicleTime: 0.0,
+          waitingTime: 30,
+          egressTime: 0.10,
+          transferTime: true,
+          totalCost: 0.0,
+        ),
+      },
+      //done
+      //////////
+      // LP1.1#6
+      {
+        "Car": CardChoiceDetails(
+          inVehicleTime: 0.10,
+          egressTime: -0.10,
+          totalCost: 0.0,
+        ),
+        "Air": CardChoiceDetails(
+          inVehicleTime: 0.20,
+          waitingTime: 60,
+          egressTime: -0.10,
+          transferTime: false,
+          totalCost: 0.20,
+        ),
+        "Bus": CardChoiceDetails(
+          inVehicleTime: -0.10,
+          waitingTime: 10,
+          egressTime: -0.20,
+          transferTime: false,
+          totalCost: 0.0,
+        ),
+        "Train": CardChoiceDetails(
+          inVehicleTime: -0.10,
+          waitingTime: 30,
+          egressTime: -0.10,
+          transferTime: false,
+          totalCost: -0.20,
+        ),
+        "HS": CardChoiceDetails(
+          inVehicleTime: -0.10,
+          waitingTime: 40,
+          egressTime: 0.0,
+          transferTime: true,
+          totalCost: 0.10,
+        ),
+      },
+      //done
+      //////////
+    ], //done

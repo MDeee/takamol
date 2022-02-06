@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "449036482033",
+    "project_id": "takamol-d9cc3",
+    "storage_bucket": "takamol-d9cc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449036482033:android:3318e34518a33700018050",
+        "android_client_info": {
+          "package_name": "com.example.takamol_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449036482033-0379dgc7ul9sa19s1k61dv4rqp4fjuge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqRId_DiZl9Rp_afVYrSubp5JZ15ygdU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449036482033-0379dgc7ul9sa19s1k61dv4rqp4fjuge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
