@@ -71,15 +71,6 @@ class JourneyOriginInfoWidget extends StatelessWidget {
               );
             }),
             const SizedBox(height: 10),
-            // TextFormField(
-            //   decoration: const InputDecoration(
-            //     label: Text("test"),
-            //     contentPadding: EdgeInsets.symmetric(horizontal: 8),
-            //   ),
-            //   initialValue: survey.journeyStartLocationName,
-            //   enabled: false,
-            // ),
-            // const SizedBox(height: 10),
             TextFormField(
               autovalidateMode: AutovalidateMode.onUserInteraction,
               decoration: const InputDecoration(
@@ -105,6 +96,21 @@ class JourneyOriginInfoWidget extends StatelessWidget {
                   );
               },
             ),
+            // const SizedBox(height: 10),
+            // TextFormField(
+            //   autovalidateMode: AutovalidateMode.onUserInteraction,
+            //   decoration: const InputDecoration(
+            //     label: Text("اسم الحي"),
+            //     contentPadding: EdgeInsets.symmetric(horizontal: 8),
+            //   ),
+            //   validator: (String? value) => Validator.validateEmpty(
+            //     value: value,
+            //     message: "يجب اعطاء اجابة",
+            //   ),
+            //   onChanged: (String? s) {
+            //     survey.journeyStarDistrictName = s!;
+            //   },
+            // ),
             const SizedBox(height: 10),
             DropDownFormInput(
               hint: const Text(

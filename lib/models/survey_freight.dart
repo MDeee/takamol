@@ -61,6 +61,8 @@ enum ContainerLoad {
   empty,
   other,
   unkown,
+  undefinedLoad,
+  unknownLoad,
 }
 enum GeneralLoad {
   industrial,

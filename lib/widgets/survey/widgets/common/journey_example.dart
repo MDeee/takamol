@@ -114,6 +114,7 @@ class _JourneyExampleInfoWidgetState extends State<JourneyExampleInfoWidget> {
                 : [],
             ...!widget.start
                 ? [
+                    const SizedBox(height: 10),
                     Row(
                       children: [
                         const Text("المنشأ: "),
@@ -138,11 +139,61 @@ class _JourneyExampleInfoWidgetState extends State<JourneyExampleInfoWidget> {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        const Text("المقصد: "),
+                        Expanded(
+                          child: TextFormField(
+                            initialValue: survey.journeyEndLocationName,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            decoration: const InputDecoration(
+                              label: Text("اسم المدينة/القريبة"),
+                              contentPadding:
+                                  EdgeInsets.symmetric(horizontal: 8),
+                            ),
+                            onSaved: (String? i) {
+                              example.endPose.name = i!;
+                            },
+                            validator: (String? i) => Validator.validateEmpty(
+                              value: i,
+                              message: "يجب اعطاء اجابة",
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                     ...createLocationInfoWidget(example, true),
                   ]
                 : [],
             ...!widget.end
                 ? [
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        const Text("المنشأ: "),
+                        Expanded(
+                          child: TextFormField(
+                            initialValue: survey.journeyStartLocationName,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            decoration: const InputDecoration(
+                              label: Text("اسم المدينة/القريبة"),
+                              contentPadding:
+                                  EdgeInsets.symmetric(horizontal: 8),
+                            ),
+                            onSaved: (String? i) {
+                              example.startPose.name = i!;
+                            },
+                            validator: (String? i) => Validator.validateEmpty(
+                              value: i,
+                              message: "يجب اعطاء اجابة",
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                     const SizedBox(height: 10),
                     Row(
                       children: [

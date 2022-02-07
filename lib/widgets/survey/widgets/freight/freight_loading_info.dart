@@ -49,8 +49,6 @@ class FreightLoadingInfo extends StatelessWidget {
                       LoadType.cars: Text("سيارات"),
                       LoadType.animals: Text("حيوانات"),
                       LoadType.other: Text("أخرى"),
-                      LoadType.undefinedLoad: Text("لا يعرف محمله او غير محمله"),
-                      LoadType.unknownLoad: Text("محمله ولا يعرف ما بداخله"),
                     },
                     validator: (LoadType? value) => Validator.validateChoice(
                       value: value,
@@ -316,9 +314,12 @@ class FreightLoadingInfo extends StatelessWidget {
                               Text("بضائع المستهلكين"),
                           ContainerLoad.petroChemical: Text("بتروكيماويات"),
                           ContainerLoad.remnants: Text("مخلفات"),
+                          ContainerLoad.undefinedLoad:
+                              Text("لا يعرف محمله او غير محمله"),
+                          ContainerLoad.unknownLoad:
+                              Text("محمله ولا يعرف ما بداخله"),
                           ContainerLoad.empty: Text("فارغة"),
                           ContainerLoad.other: Text("أخرى"),
-                          ContainerLoad.unkown: Text("لا يعرف"),
                         },
                         onChange: (ContainerLoad? p) {
                           survey.containerLoadInfoType = p!;
