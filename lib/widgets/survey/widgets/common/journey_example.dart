@@ -40,7 +40,7 @@ class _JourneyExampleInfoWidgetState extends State<JourneyExampleInfoWidget> {
   @override
   Widget build(BuildContext context) {
     final format = DateFormat("يوم dd MMM yyyy الساعة hh:mm a");
-    late DateTime startDate;
+    late DateTime startDate = DateTime.now();
     SurveyProvider survey = Provider.of<SurveyProvider>(context, listen: false);
     return Card(
       child: Padding(
@@ -51,6 +51,57 @@ class _JourneyExampleInfoWidgetState extends State<JourneyExampleInfoWidget> {
             widget.title,
             ...!widget.start && !widget.end
                 ? [
+                  const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        const Text("المنشأ: "),
+                        Expanded(
+                          child: TextFormField(
+                            initialValue: survey.journeyStartLocationName,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            decoration: const InputDecoration(
+                              label: Text("اسم المدينة/القريبة"),
+                              contentPadding:
+                                  EdgeInsets.symmetric(horizontal: 8),
+                            ),
+                            onSaved: (String? i) {
+                              example.startPose.name = i!;
+                            },
+                            validator: (String? i) => Validator.validateEmpty(
+                              value: i,
+                              message: "يجب اعطاء اجابة",
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        const Text("المقصد: "),
+                        Expanded(
+                          child: TextFormField(
+                            initialValue: survey.journeyEndLocationName,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            decoration: const InputDecoration(
+                              label: Text("اسم المدينة/القريبة"),
+                              contentPadding:
+                                  EdgeInsets.symmetric(horizontal: 8),
+                            ),
+                            onSaved: (String? i) {
+                              example.endPose.name = i!;
+                            },
+                            validator: (String? i) => Validator.validateEmpty(
+                              value: i,
+                              message: "يجب اعطاء اجابة",
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    ...createLocationInfoWidget(example, true),
                     const SizedBox(height: 10),
                     DropDownFormInput(
                       hint: const Text(
@@ -112,7 +163,7 @@ class _JourneyExampleInfoWidgetState extends State<JourneyExampleInfoWidget> {
                         : [],
                   ]
                 : [],
-            ...!widget.start
+            ...widget.start
                 ? [
                     const SizedBox(height: 10),
                     Row(
@@ -167,7 +218,7 @@ class _JourneyExampleInfoWidgetState extends State<JourneyExampleInfoWidget> {
                     ...createLocationInfoWidget(example, true),
                   ]
                 : [],
-            ...!widget.end
+            ...widget.end
                 ? [
                     const SizedBox(height: 10),
                     Row(

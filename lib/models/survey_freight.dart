@@ -244,7 +244,7 @@ class SurveyFreight extends Survey {
     origin.location.name = json['originLocationName'];
     origin.location.travelTarget = EnumToString.fromString(
         TravelTarget.values, json['originLocationType'],
-        camelCase: true)!;
+        camelCase: true);
     origin.type = json['originType'];
     origin.timestamp = DateTime.parse(json['originTimeStamp']);
 
@@ -252,7 +252,7 @@ class SurveyFreight extends Survey {
     destination.location.name = json['destinationLocationName'];
     destination.location.travelTarget = EnumToString.fromString(
         TravelTarget.values, json['destinationLocationType'],
-        camelCase: true)!;
+        camelCase: true);
     destination.type = json['destinationType'];
     destination.timestamp = DateTime.parse(json['destinationTimeStamp']);
     var tempType = EnumToString.fromString(

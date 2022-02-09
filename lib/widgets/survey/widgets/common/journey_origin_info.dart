@@ -179,7 +179,7 @@ class JourneyOriginInfoWidget extends StatelessWidget {
                     firstDate: DateTime(2010),
                     initialDate: currentValue ?? DateTime.now(),
                     lastDate: DateTime(2100)))!;
-                if (startDate != null) {
+                if (startDate != '') {
                   final time = await showTimePicker(
                     context: context,
                     initialTime:
@@ -187,7 +187,7 @@ class JourneyOriginInfoWidget extends StatelessWidget {
                   );
                   return DateTimeField.combine(startDate, time);
                 } else {
-                  return currentValue;
+                  return DateTime.now();
                 }
               },
               validator: (DateTime? d) => Validator.validateChoice(
